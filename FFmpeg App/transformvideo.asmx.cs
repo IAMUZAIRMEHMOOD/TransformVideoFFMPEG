@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Services;
 
@@ -21,6 +22,12 @@ namespace FFmpeg_App
         public string HelloWorld()
         {
             return "Hello World";
+            //ffmpeg -i input.mp4 output.webm
+        }
+        public string convertmp4towebm(string inputvid)
+        {
+            //ffmpeg -i "inputvid.mp4"
+            return;
         }
     }
 }
