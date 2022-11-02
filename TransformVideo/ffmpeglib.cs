@@ -11,13 +11,15 @@ namespace TransformVideo
     {
         public static void setffmpegpath()
         {
-            FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\ffmpeg");
+            FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
         }
         public async Task<bool> convert(string inputPath, string outputPath)
         {
             try 
-            { 
-            outputPath = Path.Combine(outputPath, "converted.mp4");
+            {
+                FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
+
+                outputPath = Path.Combine(outputPath, "converted.mp4");
             var mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
             var videoStream = mediaInfo.VideoStreams.First()
                 .SetCodec(VideoCodec.h264)

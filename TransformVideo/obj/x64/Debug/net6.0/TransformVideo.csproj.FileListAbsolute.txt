@@ -1,0 +1,12 @@
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\bin\x64\Debug\net6.0\TransformVideo.deps.json
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\bin\x64\Debug\net6.0\TransformVideo.dll
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\bin\x64\Debug\net6.0\TransformVideo.pdb
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.csproj.AssemblyReference.cache
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.AssemblyInfoInputs.cache
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.AssemblyInfo.cs
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.csproj.CoreCompileInputs.cache
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.dll
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\refint\TransformVideo.dll
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\TransformVideo.pdb
+C:\Users\uzair.mehmood\Desktop\GTP\TransformVideo\obj\x64\Debug\net6.0\ref\TransformVideo.dll
