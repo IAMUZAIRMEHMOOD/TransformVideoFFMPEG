@@ -1,0 +1,20 @@
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.csproj.AssemblyReference.cache
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.AssemblyInfoInputs.cache
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.AssemblyInfo.cs
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.csproj.CoreCompileInputs.cache
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Test App.exe
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Test App.deps.json
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Test App.runtimeconfig.json
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Test App.dll
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Test App.pdb
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\TransformVideo.dll
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\TransformVideo.pdb
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.csproj.CopyComplete
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.dll
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\refint\Test App.dll
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.pdb
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\Test App.genruntimeconfig.cache
+C:\Users\uzair.mehmood\Desktop\Test App\obj\Debug\net6.0\ref\Test App.dll
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\uzair.mehmood\Desktop\Test App\bin\Debug\net6.0\Xabe.FFmpeg.dll
