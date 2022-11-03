@@ -18,16 +18,16 @@ namespace TransformVideo
             try 
             {
                 FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
-
                 outputPath = Path.Combine(outputPath, "converted.mp4");
-            var mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-            var videoStream = mediaInfo.VideoStreams.First()
+                var mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                var videoStream = mediaInfo.VideoStreams.First()
                 .SetCodec(VideoCodec.h264)
                 .SetSize(VideoSize.Hd480);
-            await FFmpeg.Conversions.New()
+                await FFmpeg.Conversions.New()
                 .AddStream(videoStream)
                 .SetOutput(outputPath)
                 .Start();
+
             }
         
             catch(Exception e)

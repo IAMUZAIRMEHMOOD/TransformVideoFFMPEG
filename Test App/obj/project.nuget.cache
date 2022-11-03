@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5gubyG/ROcZmxBJ/E9GN2cQo/1K+AmGuI6711xlrTOmdk7HCaRnmjUNzlzybjpe/OvIiWpDFZEUaO7k6WF4jjg==",
+  "dgSpecHash": "GP+6FufUjr6KGZauWN36rzXxzeMvWMARXSdHlARy12DPEMoaYB8WBpiKTUNMADMkzqz6mqcEVeAvcRUtOyiGLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\Test App\\Test App.csproj",
+  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\Test App\\Test App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",

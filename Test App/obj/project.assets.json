@@ -2753,11 +2753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\Test App\\Test App.csproj",
+      "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\Test App\\Test App.csproj",
       "projectName": "Test App",
-      "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\Test App\\Test App.csproj",
+      "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\Test App\\Test App.csproj",
       "packagesPath": "C:\\Users\\uzair.mehmood\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\Test App\\obj\\",
+      "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\Test App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\uzair.mehmood\\AppData\\Roaming\\NuGet\\NuGet.Config",
