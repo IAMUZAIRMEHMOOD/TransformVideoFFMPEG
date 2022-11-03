@@ -13,11 +13,6 @@ Console.WriteLine("Enter Output Path: ");
 Console.ReadKey();
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
 Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\");
-//Video Quality
-//Console.WriteLine("Enter video quality: ");
-//Console.ReadKey();
-//quality = 1080;
-//Console.WriteLine("1080p");
 transformvideo Transform3 = new transformvideo();
 Transform3.converttomp4(inputPath: input, outputPath: output);
 Console.ReadKey();
@@ -37,7 +32,7 @@ Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 //Video Quality
 Console.WriteLine("Enter video quality: ");
 Console.ReadKey();
-quality = 1080;
+quality = 480;
 Console.WriteLine("480p");
 transformvideo Transform = new transformvideo();
 Transform.convertvideo(inputPath: input, outputPath: output, vidQuality: quality);
