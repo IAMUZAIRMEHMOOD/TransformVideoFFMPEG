@@ -24,7 +24,7 @@ namespace TransformVideo
                .SetCodec(AudioCodec.aac);
                 IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
                .SetCodec(VideoCodec.h264);
-                FFmpeg.Conversions.New()
+                await FFmpeg.Conversions.New()
                .AddStream(audioStream, videoStream)
                .SetOutput(outputPath)
                .Start();
@@ -55,7 +55,7 @@ namespace TransformVideo
                         IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
                        .SetCodec(VideoCodec.h264)
                        .SetSize(VideoSize.Hd480);
-                        FFmpeg.Conversions.New()
+                        await FFmpeg.Conversions.New()
                        .AddStream(audioStream, videoStream)
                        .SetOutput(outputPath)
                        .Start();
@@ -68,7 +68,7 @@ namespace TransformVideo
                         videoStream = mediaInfo.VideoStreams.FirstOrDefault()
                        .SetCodec(VideoCodec.h264)
                        .SetSize(VideoSize.Hd720);
-                        FFmpeg.Conversions.New()
+                        await FFmpeg.Conversions.New()
                        .AddStream(audioStream,videoStream)
                        .SetOutput(outputPath)
                        .Start();
@@ -81,7 +81,7 @@ namespace TransformVideo
                         videoStream = mediaInfo.VideoStreams.FirstOrDefault()
                        .SetCodec(VideoCodec.h264)
                        .SetSize(VideoSize.Hd1080);
-                        FFmpeg.Conversions.New()
+                        await FFmpeg.Conversions.New()
                        .AddStream(audioStream, videoStream)
                        .SetOutput(outputPath)
                        .Start();
