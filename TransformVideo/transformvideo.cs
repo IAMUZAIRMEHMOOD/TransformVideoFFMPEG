@@ -10,14 +10,38 @@ namespace TransformVideo
 {
     public class transformvideo
     {
-        static transformvideo()
-        {
-             FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
-        }
-        public async Task<bool> convertvideo(string inputPath, string outputPath, int vidQuality)
-        {
+            static transformvideo()
+            {
+                 FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
+            }
+            public async Task<bool> converttomp4(string inputPath, string outputPath)
+            {
             try
             {
+                outputPath = Path.Combine(outputPath, "convertedtomp4.mp4");
+                IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+               .SetCodec(AudioCodec.aac);
+                IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+               .SetCodec(VideoCodec.h264);
+                FFmpeg.Conversions.New()
+               .AddStream(audioStream, videoStream)
+               .SetOutput(outputPath)
+               .Start();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+               
+            }
+            return true;
+            }
+            public async Task<bool> convertvideo(string inputPath, string outputPath, int vidQuality)
+             {
+           
+            try
+            {
+
                 //var mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
                 //var videoStream = mediaInfo.VideoStreams.First();
                 switch (vidQuality)
