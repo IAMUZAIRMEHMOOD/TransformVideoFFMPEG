@@ -1,5 +1,11 @@
 ﻿/*
 Split Video
+Take Snapshot
+Combine Video
+Add watermark 
+Trim Video
+Convert to mp4
+Convert video -- to 480p 720p 1080p
 */
 using Xabe.FFmpeg;
 using System.IO;
