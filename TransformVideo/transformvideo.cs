@@ -5,15 +5,40 @@ using Xabe.FFmpeg.Exceptions;
 using System.Resources;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TransformVideo
 {
     public class transformvideo
     {
-            static transformvideo()
+        static transformvideo()
+        {
+            FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
+        }     
+          /*  public async Task<bool> stopconversion(string inputPath, string outputPath)
             {
-                 FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
-            }
+                try
+                {  
+                    var CancellationTokenSource = new CancellationTokenSource();
+                    outputPath = Path.Combine(outputPath, "StoppedVideo.mp4");
+                    IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                    .SetCodec(AudioCodec.aac);
+                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                    .SetCodec(VideoCodec.h264);
+                     await FFmpeg.Conversions.New()
+                    .AddStream(audioStream, videoStream)
+                    .SetOutput(outputPath)
+                    .Start(CancellationTokenSource.Token);
+                    CancellationTokenSource.Cancel();
+                }
+                catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                    return true;
+            }*/
+                  
             public async Task<bool> trimmingvideo(string inputPath, string outputPath,int startTime,int endTime)
             {
                 try

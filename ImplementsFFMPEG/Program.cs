@@ -4,7 +4,7 @@ using TransformVideo;
 string input, output;
 ////-----------------Trimming Video------------------
 //Declaring Variables
-int start,end;
+int start, end;
 /////Input Video Location
 Console.WriteLine("Entering Input File Location: ");
 Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
@@ -25,7 +25,7 @@ end = 40;
 Console.ReadKey();
 Console.WriteLine("\n\t\tTrimming Video....");
 transformvideo Transform4 = new transformvideo();
-Transform4.trimmingvideo(inputPath: input, outputPath: output, startTime: start,endTime: end);
+Transform4.trimmingvideo(inputPath: input, outputPath: output, startTime: start, endTime: end);
 Console.ReadKey();
 ////-----------------Converting To MP4------------------
 /////Input Video Location
@@ -42,7 +42,7 @@ Console.WriteLine("\n\t\tConverting Video To mp4....");
 transformvideo Transform3 = new transformvideo();
 Transform3.converttomp4(inputPath: input, outputPath: output);
 Console.ReadKey();
-//-----------------Converting 480------------------
+////-----------------Converting 480------------------
 //Declaring Variables
 int quality;
 //Input Video Location
@@ -88,13 +88,13 @@ Console.ReadKey();
 //Input Video Location
 Console.WriteLine("Enter Input File Location: ");
 Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
-Console.ReadKey();
 input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
 Console.ReadKey();
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 //Video Quality
 Console.WriteLine("Enter video quality: ");
 Console.WriteLine("1080p");
@@ -104,3 +104,20 @@ transformvideo Transform2 = new transformvideo();
 Transform2.convertvideo(inputPath: input, outputPath: output, vidQuality: quality);
 Console.WriteLine("\n\t\tConverting Video To 1080p....");
 Console.ReadKey();
+/*
+//////-----------------Stop Conversion------------------
+//Input Video Location
+Console.WriteLine("Enter Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.ReadKey();
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.ReadKey();
+transformvideo Transform5 = new transformvideo();
+Transform5.stopconversion(inputPath: input, outputPath: output);
+Console.WriteLine("\n\t\tStopping Conversion....");
+Console.ReadKey();
+*/
