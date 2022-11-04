@@ -47,14 +47,14 @@ namespace TransformVideo
                   }
                   return true;
           }*/
-            public async Task<bool> desktopCapture(string outputPath,int time)
+            public async Task<bool> desktopCapture(string outputPath,int timeSpan)
             {
                 try
                 {
                     outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
                     IConversionResult conversionResult = await FFmpeg.Conversions.New()
                    .AddDesktopStream()
-                   .SetInputTime(TimeSpan.FromSeconds(3))
+                   .SetInputTime(TimeSpan.FromSeconds(timeSpan))
                    .SetOutput(outputPath)
                    .Start();
                    //IConversionResult result = await conversion.Start();

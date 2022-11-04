@@ -3,6 +3,19 @@ using TransformVideo;
 //Declaring Variables
 string input, input2, output, watermark;
 int time, start, end;
+////-----------------Desktop Capture------------------
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+Console.ReadKey();
+Console.WriteLine("Enter Time Span: ");
+Console.WriteLine("30");
+time = 30;
+Console.ReadKey();
+Console.WriteLine("\n\t\tCapture Desktop");
+transformvideo Transform9 = new transformvideo();
+Transform9.desktopCapture(outputPath: output, timespan: time);
 ////-----------------Combine Video------------------
 /////Input1 Video Location
 Console.WriteLine("Enter 1st Input File Location: ");
