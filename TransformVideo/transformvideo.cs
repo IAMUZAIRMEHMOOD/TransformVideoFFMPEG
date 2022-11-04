@@ -14,6 +14,30 @@ namespace TransformVideo
             {
                  FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
             }
+            public async Task<bool> trimmingvideo(string inputPath, string outputPath,int startTime,int endTime)
+            {
+                try
+                {
+                    outputPath = Path.Combine(outputPath, "Trimmed Video.mp4");
+                    IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                   .SetCodec(AudioCodec.aac);
+                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                   .SetCodec(VideoCodec.h264);
+                    await FFmpeg.Conversions.New()
+                   .AddParameter($"-ss {startTime} -t {endTime}")
+                   //.AddParameter("-s 1010x1080")
+                   .AddStream(audioStream,videoStream)
+                   .SetOutput(outputPath)
+                   .Start();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                }
+                return true;
+            }
             public async Task<bool> converttomp4(string inputPath, string outputPath)
             {
                 try
@@ -28,11 +52,12 @@ namespace TransformVideo
                    .AddStream(audioStream, videoStream)
                    .SetOutput(outputPath)
                    .Start();
+                    
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-               
+           
                 }
             return true;
             }
