@@ -52,20 +52,38 @@ namespace TransformVideo
             {
                 try
                 {
-                     outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
-                    var conversion = FFmpeg.Conversions.New()
-                    .AddDesktopStream()
-                    .SetInputTime(TimeSpan.FromSeconds(timeSpan))
-                    .SetOutput(outputPath);
-                     var desktopStream = conversion.Streams.First() as VideoStream;
-                     desktopStream.Rotate(RotateDegrees.Clockwise);
-                     await conversion.Start();
-                    /*outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
+                    /*   outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
+                         var conversion = FFmpeg.Conversions.New()
+                        .AddDesktopStream()
+                        .SetInputTime(TimeSpan.FromSeconds(timeSpan))
+                        .SetOutput(outputPath);
+                         var desktopStream = conversion.Streams.First() as VideoStream;
+                         desktopStream.Rotate(RotateDegrees.Clockwise);
+                         await conversion.Start();
+                    */
+                    outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
                     IConversionResult conversionResult = await FFmpeg.Conversions.New()
-                    .AddDesktopStream()
-                    .SetInputTime(TimeSpan.FromSeconds(timeSpan))
-                    .SetOutput(outputPath)
-                    .Start();*/
+                   .AddDesktopStream()
+                   .SetInputTime(TimeSpan.FromSeconds(timeSpan))
+                   .SetOutput(outputPath)
+                   .Start();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                }
+                  return true;
+             }
+            public async Task<bool> splitvideo(string inputPath,string outputPath, int startTime,int endTime)
+            {
+                try
+                {
+                    outputPath = Path.Combine(outputPath, "splittedvideo.mp4");
+                    IConversion conversion = await FFmpeg.Conversions
+                   .FromSnippet
+                   .Split(inputPath, outputPath, TimeSpan.FromSeconds(startTime),TimeSpan.FromSeconds(endTime));
+                    IConversionResult result = await conversion.Start();
                 }
                 catch (Exception e)
                 {
@@ -74,23 +92,6 @@ namespace TransformVideo
                 }
                 return true;
             }
-            public async Task<bool> splitvideo(string inputPath, string outputPath, int startTime, int endTime)
-                {
-                    try
-                    {
-                        outputPath = Path.Combine(outputPath, "splittedvideo.mp4");
-                        IConversion conversion = await FFmpeg.Conversions
-                       .FromSnippet
-                       .Split(inputPath, outputPath, TimeSpan.FromSeconds(startTime),TimeSpan.FromSeconds(endTime));
-                        IConversionResult result = await conversion.Start();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-
-                    }
-                    return true;
-                }
             public async Task<bool> takesnapshot(string inputPath, string outputPath, int timeinsec)
                 {
                     try
