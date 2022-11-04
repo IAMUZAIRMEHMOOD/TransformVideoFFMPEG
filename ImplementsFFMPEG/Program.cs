@@ -3,6 +3,25 @@ using TransformVideo;
 //Declaring Variables
 string input, input2, output, watermark;
 int time, start, end;
+////-----------------Combine Video------------------
+/////Input1 Video Location
+Console.WriteLine("Enter 1st Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4";
+Console.ReadKey();
+//Input2 Video Location
+Console.WriteLine("Enter 2st Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4");
+input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4";
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+Console.ReadKey();
+Console.WriteLine("\n\t\tCombining Videos....");
+transformvideo Transform6 = new transformvideo();
+Transform6.combinevideos(inputPath1: input, inputPath2: input2, outputPath: output);
+Console.ReadKey();
 ////-----------------Split Video------------------
 /////Input Video Location
 Console.WriteLine("Entering Input File Location: ");
@@ -15,8 +34,8 @@ Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
 Console.ReadKey();
 Console.WriteLine("Enter Start Time in Seconds: ");
-Console.WriteLine("15");
-start = 15;
+Console.WriteLine("60");
+start = 60;
 Console.ReadKey();
 Console.WriteLine("Enter Split in Seconds: ");
 Console.WriteLine("15");
@@ -163,25 +182,6 @@ Console.ReadKey();
 transformvideo Transform2 = new transformvideo();
 Transform2.convertvideo(inputPath: input, outputPath: output, vidQuality: quality);
 Console.WriteLine("\n\t\tConverting Video To 1080p....");
-Console.ReadKey();
-////-----------------Combine Video------------------
-/////Input1 Video Location
-Console.WriteLine("Enter 1st Input File Location: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4");
-input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4";
-Console.ReadKey();
-//Input2 Video Location
-Console.WriteLine("Enter 2st Input File Location: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4");
-input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4";
-//Output Path 
-Console.WriteLine("Enter Output Path: ");
-output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
-Console.ReadKey();
-Console.WriteLine("\n\t\tCombining Videos....");
-transformvideo Transform6 = new transformvideo();
-Transform6.combinevideos(inputPath1: input, inputPath2: input2, outputPath: output);
 Console.ReadKey();
 /*
 //////-----------------Stop Conversion------------------
