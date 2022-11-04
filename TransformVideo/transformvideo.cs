@@ -38,15 +38,15 @@ namespace TransformVideo
                   }
                   return true;
           }*/
-            public async Task<bool> takesnapshot(string inputPath, string outputPath, int timeinsec)
+            public async Task<bool> splitvideo(string inputPath, string outputPath, int start, int end)
             {
                 try
                 {
-                    outputPath = Path.Combine(outputPath, "snapshot.png");
+                    outputPath = Path.Combine(outputPath, "splittedvideo.mp4");
                     IConversion conversion = await FFmpeg.Conversions
                    .FromSnippet
-                   .Snapshot(inputPath,outputPath,TimeSpan.FromSeconds(timeinsec));
-                    IConversionResult result =   await conversion.Start();
+                   .Split(inputPath, outputPath, TimeSpan.FromSeconds(start),TimeSpan.FromSeconds(end));
+                    IConversionResult result = await conversion.Start();
                 }
                 catch (Exception e)
                 {
@@ -55,6 +55,23 @@ namespace TransformVideo
                 }
                 return true;
             }
+            public async Task<bool> takesnapshot(string inputPath, string outputPath, int timeinsec)
+                {
+                    try
+                    {
+                        outputPath = Path.Combine(outputPath, "snapshot.png");
+                        IConversion conversion = await FFmpeg.Conversions
+                       .FromSnippet
+                       .Snapshot(inputPath,outputPath,TimeSpan.FromSeconds(timeinsec));
+                        IConversionResult result =   await conversion.Start();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+
+                    }
+                    return true;
+                }
             public async Task<bool> combinevideos(string inputPath1, string inputPath2,string outputPath)
                 {
                     try
