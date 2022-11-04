@@ -15,12 +15,12 @@ Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
 Console.ReadKey();
 Console.WriteLine("Enter Start Time in Seconds: ");
-Console.WriteLine("10");
-start = 10;
+Console.WriteLine("15");
+start = 15;
 Console.ReadKey();
-Console.WriteLine("Enter End Time in Seconds: ");
-Console.WriteLine("20");
-end = 20;
+Console.WriteLine("Enter Split in Seconds: ");
+Console.WriteLine("15");
+end = 15;
 Console.ReadKey();
 Console.WriteLine("\n\t\tSplitting Video....");
 transformvideo Transform8 = new transformvideo();
@@ -167,13 +167,13 @@ Console.ReadKey();
 ////-----------------Combine Video------------------
 /////Input1 Video Location
 Console.WriteLine("Enter 1st Input File Location: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
-input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4";
 Console.ReadKey();
 //Input2 Video Location
 Console.WriteLine("Enter 2st Input File Location: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png");
-input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4");
+input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4";
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";

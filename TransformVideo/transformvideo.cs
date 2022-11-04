@@ -59,7 +59,8 @@ namespace TransformVideo
                 {
                     try
                     {
-                        outputPath = Path.Combine(outputPath, "snapshot",Path.GetTempFileName(),".png");
+                        //outputPath = Path.Combine(outputPath, "snapshot",Path.GetTempFileName(),".png");
+                        outputPath = Path.Combine(outputPath, "snapshot.png");
                         IConversion conversion = await FFmpeg.Conversions
                        .FromSnippet
                        .Snapshot(inputPath,outputPath,TimeSpan.FromSeconds(timeinsec));
