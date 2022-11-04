@@ -1,7 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using TransformVideo;
 //Declaring Variables
-string input, output, watermark;
+string input, input2, output, watermark;
+int time;
+////-----------------Take Snapshot------------------
+/////Input Video Location
+Console.WriteLine("Enter Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4";
+Console.ReadKey();
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+Console.ReadKey();
+//Watermark Path
+Console.WriteLine("Enter Time in Second to Take Snapshot: ");
+Console.WriteLine("40");
+time = 40;
+Console.WriteLine("\n\t\tSnapshot Saved....");
+transformvideo Transform7 = new transformvideo();
+Transform7.takesnapshot(inputPath: input, outputPath: output, timeinsec: time);
+Console.ReadKey();
 ////-----------------Add Watermark------------------
 /////Input Video Location
 Console.WriteLine("Enter Input File Location: ");
@@ -11,7 +31,7 @@ Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 Console.ReadKey();
 //Watermark Path
 Console.WriteLine("Enter Watermark Path: ");
@@ -31,7 +51,7 @@ input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
 Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
 Console.ReadKey();
 Console.WriteLine("Enter Start Time in Seconds: ");
@@ -55,7 +75,7 @@ Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 Console.ReadKey();
 Console.WriteLine("\n\t\tConverting Video To mp4....");
 transformvideo Transform3 = new transformvideo();
@@ -122,6 +142,25 @@ Console.ReadKey();
 transformvideo Transform2 = new transformvideo();
 Transform2.convertvideo(inputPath: input, outputPath: output, vidQuality: quality);
 Console.WriteLine("\n\t\tConverting Video To 1080p....");
+Console.ReadKey();
+////-----------------Combine Video------------------
+/////Input1 Video Location
+Console.WriteLine("Enter 1st Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.ReadKey();
+//Input2 Video Location
+Console.WriteLine("Enter 2st Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png");
+input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png";
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+Console.ReadKey();
+Console.WriteLine("\n\t\tCombining Videos....");
+transformvideo Transform6 = new transformvideo();
+Transform6.combinevideos(inputPath1: input, inputPath2: input2, outputPath: output);
 Console.ReadKey();
 /*
 //////-----------------Stop Conversion------------------

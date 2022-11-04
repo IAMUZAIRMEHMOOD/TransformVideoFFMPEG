@@ -38,25 +38,15 @@ namespace TransformVideo
                   }
                   return true;
           }*/
-
-            public async Task<bool> addwatermark(string inputPath, string outputPath, string watermarkPath)
+            public async Task<bool> takesnapshot(string inputPath, string outputPath, int timeinsec)
             {
                 try
                 {
-                    outputPath = Path.Combine(outputPath, "Videowithwatermark.mp4");
-                    IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                   // IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
-                   //.SetCodec(AudioCodec.aac);
+                    outputPath = Path.Combine(outputPath, "snapshot.png");
                     IConversion conversion = await FFmpeg.Conversions
-                    .FromSnippet
-                    .SetWatermark(inputPath, outputPath, watermarkPath, Position.BottomRight);
-                     IConversionResult result = await conversion.Start();
-                   // IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
-                   //.SetCodec(VideoCodec.h264);
-                   // await FFmpeg.Conversions.New()
-                   //.AddStream(audioStream, videoStream)
-                   //.SetOutput(outputPath)
-                   //.Start();
+                   .FromSnippet
+                   .Snapshot(inputPath,outputPath,TimeSpan.FromSeconds(timeinsec));
+                    IConversionResult result =   await conversion.Start();
                 }
                 catch (Exception e)
                 {
@@ -65,6 +55,41 @@ namespace TransformVideo
                 }
                 return true;
             }
+            public async Task<bool> combinevideos(string inputPath1, string inputPath2,string outputPath)
+                {
+                    try
+                    {
+                        outputPath = Path.Combine(outputPath, "Combinedvideo.mp4");
+                         var conversion = await FFmpeg.Conversions
+                        .FromSnippet
+                        .Concatenate(outputPath, inputPath1, inputPath2);
+                        await conversion.Start();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+
+                    }
+                    return true;
+                }
+
+            public async Task<bool> addwatermark(string inputPath, string outputPath, string watermarkPath)
+                {
+                    try
+                    {
+                         outputPath = Path.Combine(outputPath, "Videowithwatermark.mp4");
+                         IConversion conversion = await FFmpeg.Conversions
+                        .FromSnippet
+                        .SetWatermark(inputPath, outputPath, watermarkPath, Position.BottomRight);
+                         IConversionResult result = await conversion.Start();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+
+                    }
+                    return true;
+                }
             public async Task<bool> trimmingvideo(string inputPath, string outputPath,int startTime,int endTime)
                 {
                     try
