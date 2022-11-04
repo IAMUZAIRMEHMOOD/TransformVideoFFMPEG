@@ -1,4 +1,5 @@
 ﻿/*
+Desktop Capture
 Split Video
 Take Snapshot
 Combine Video
@@ -51,13 +52,20 @@ namespace TransformVideo
             {
                 try
                 {
-                    outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
+                     outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
+                    var conversion = FFmpeg.Conversions.New()
+                    .AddDesktopStream()
+                    .SetInputTime(TimeSpan.FromSeconds(timeSpan))
+                    .SetOutput(outputPath);
+                     var desktopStream = conversion.Streams.First() as VideoStream;
+                     desktopStream.Rotate(RotateDegrees.Clockwise);
+                     await conversion.Start();
+                    /*outputPath = Path.Combine(outputPath, "DesktopRecording.mp4");
                     IConversionResult conversionResult = await FFmpeg.Conversions.New()
-                   .AddDesktopStream()
-                   .SetInputTime(TimeSpan.FromSeconds(timeSpan))
-                   .SetOutput(outputPath)
-                   .Start();
-                   //IConversionResult result = await conversion.Start();
+                    .AddDesktopStream()
+                    .SetInputTime(TimeSpan.FromSeconds(timeSpan))
+                    .SetOutput(outputPath)
+                    .Start();*/
                 }
                 catch (Exception e)
                 {

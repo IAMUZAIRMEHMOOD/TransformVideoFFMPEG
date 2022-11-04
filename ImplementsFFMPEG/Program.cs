@@ -15,7 +15,7 @@ time = 30;
 Console.ReadKey();
 Console.WriteLine("\n\t\tCapture Desktop");
 transformvideo Transform9 = new transformvideo();
-Transform9.desktopCapture(outputPath: output, timespan: time);
+Transform9.desktopCapture(outputPath: output, timeSpan: time);
 ////-----------------Combine Video------------------
 /////Input1 Video Location
 Console.WriteLine("Enter 1st Input File Location: ");
