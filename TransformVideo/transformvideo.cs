@@ -14,47 +14,49 @@ namespace TransformVideo
         static transformvideo()
         {
             FFmpeg.SetExecutablesPath(@"C:\Users\uzair.mehmood\Desktop\ffmpeg");
-        }     
-          /*  public async Task<bool> stopconversion(string inputPath, string outputPath)
-            {
-                try
-                {  
-                    var CancellationTokenSource = new CancellationTokenSource();
-                    outputPath = Path.Combine(outputPath, "StoppedVideo.mp4");
-                    IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
-                    .SetCodec(AudioCodec.aac);
-                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
-                    .SetCodec(VideoCodec.h264);
-                     await FFmpeg.Conversions.New()
-                    .AddStream(audioStream, videoStream)
-                    .SetOutput(outputPath)
-                    .Start(CancellationTokenSource.Token);
-                    CancellationTokenSource.Cancel();
-                }
-                catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                    return true;
-            }*/
-                  
-            public async Task<bool> trimmingvideo(string inputPath, string outputPath,int startTime,int endTime)
+        }
+        /*  public async Task<bool> stopconversion(string inputPath, string outputPath)
+          {
+              try
+              {  
+                  var CancellationTokenSource = new CancellationTokenSource();
+                  outputPath = Path.Combine(outputPath, "StoppedVideo.mp4");
+                  IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                  IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                  .SetCodec(AudioCodec.aac);
+                  IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                  .SetCodec(VideoCodec.h264);
+                   await FFmpeg.Conversions.New()
+                  .AddStream(audioStream, videoStream)
+                  .SetOutput(outputPath)
+                  .Start(CancellationTokenSource.Token);
+                  CancellationTokenSource.Cancel();
+              }
+              catch (Exception e)
+                  {
+                      Console.WriteLine(e.Message);
+                  }
+                  return true;
+          }*/
+
+            public async Task<bool> addwatermark(string inputPath, string outputPath, string watermarkPath)
             {
                 try
                 {
-                    outputPath = Path.Combine(outputPath, "Trimmed Video.mp4");
+                    outputPath = Path.Combine(outputPath, "Videowithwatermark.mp4");
                     IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
-                   .SetCodec(AudioCodec.aac);
-                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
-                   .SetCodec(VideoCodec.h264);
-                    await FFmpeg.Conversions.New()
-                   .AddParameter($"-ss {startTime} -t {endTime}")
-                   //.AddParameter("-s 1010x1080")
-                   .AddStream(audioStream,videoStream)
-                   .SetOutput(outputPath)
-                   .Start();
+                   // IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                   //.SetCodec(AudioCodec.aac);
+                    IConversion conversion = await FFmpeg.Conversions
+                    .FromSnippet
+                    .SetWatermark(inputPath, outputPath, watermarkPath, Position.BottomRight);
+                     IConversionResult result = await conversion.Start();
+                   // IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                   //.SetCodec(VideoCodec.h264);
+                   // await FFmpeg.Conversions.New()
+                   //.AddStream(audioStream, videoStream)
+                   //.SetOutput(outputPath)
+                   //.Start();
                 }
                 catch (Exception e)
                 {
@@ -63,6 +65,30 @@ namespace TransformVideo
                 }
                 return true;
             }
+            public async Task<bool> trimmingvideo(string inputPath, string outputPath,int startTime,int endTime)
+                {
+                    try
+                    {
+                        outputPath = Path.Combine(outputPath, "Trimmedvideo.mp4");
+                        IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
+                        IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                       .SetCodec(AudioCodec.aac);
+                        IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                       .SetCodec(VideoCodec.h264);
+                        await FFmpeg.Conversions.New()
+                       .AddParameter($"-ss {startTime} -t {endTime}")
+                       //.AddParameter("-s 1010x1080")
+                       .AddStream(audioStream,videoStream)
+                       .SetOutput(outputPath)
+                       .Start();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+
+                    }
+                    return true;
+                }
             public async Task<bool> converttomp4(string inputPath, string outputPath)
             {
                 try

@@ -1,7 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using TransformVideo;
 //Declaring Variables
-string input, output;
+string input, output, watermark;
+////-----------------Add Watermark------------------
+/////Input Video Location
+Console.WriteLine("Enter Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.ReadKey();
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\");
+Console.ReadKey();
+//Watermark Path
+Console.WriteLine("Enter Watermark Path: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png");
+watermark = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\watermark.png";
+Console.WriteLine("\n\t\tAdding Watermark....");
+transformvideo Transform5 = new transformvideo();
+Transform5.addwatermark(inputPath: input, outputPath: output, watermark);
+Console.ReadKey();
 ////-----------------Trimming Video------------------
 //Declaring Variables
 int start, end;
