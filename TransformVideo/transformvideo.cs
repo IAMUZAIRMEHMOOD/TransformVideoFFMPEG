@@ -38,14 +38,14 @@ namespace TransformVideo
                   }
                   return true;
           }*/
-            public async Task<bool> splitvideo(string inputPath, string outputPath, int start, int end)
+            public async Task<bool> splitvideo(string inputPath, string outputPath, int startTime, int endTime)
             {
                 try
                 {
                     outputPath = Path.Combine(outputPath, "splittedvideo.mp4");
                     IConversion conversion = await FFmpeg.Conversions
                    .FromSnippet
-                   .Split(inputPath, outputPath, TimeSpan.FromSeconds(start),TimeSpan.FromSeconds(end));
+                   .Split(inputPath, outputPath, TimeSpan.FromSeconds(startTime),TimeSpan.FromSeconds(endTime));
                     IConversionResult result = await conversion.Start();
                 }
                 catch (Exception e)
@@ -59,7 +59,7 @@ namespace TransformVideo
                 {
                     try
                     {
-                        outputPath = Path.Combine(outputPath, "snapshot.png");
+                        outputPath = Path.Combine(outputPath, "snapshot",Path.GetTempFileName(),".png");
                         IConversion conversion = await FFmpeg.Conversions
                        .FromSnippet
                        .Snapshot(inputPath,outputPath,TimeSpan.FromSeconds(timeinsec));

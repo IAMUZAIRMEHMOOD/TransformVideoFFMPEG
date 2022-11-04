@@ -2,7 +2,30 @@
 using TransformVideo;
 //Declaring Variables
 string input, input2, output, watermark;
-int time;
+int time, start, end;
+////-----------------Split Video------------------
+/////Input Video Location
+Console.WriteLine("Entering Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4";
+Console.ReadKey();
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.ReadKey();
+Console.WriteLine("Enter Start Time in Seconds: ");
+Console.WriteLine("10");
+start = 10;
+Console.ReadKey();
+Console.WriteLine("Enter End Time in Seconds: ");
+Console.WriteLine("20");
+end = 20;
+Console.ReadKey();
+Console.WriteLine("\n\t\tSplitting Video....");
+transformvideo Transform8 = new transformvideo();
+Transform8.splitvideo(inputPath: input, outputPath: output, startTime: start, endTime: end);
+Console.ReadKey();
 ////-----------------Take Snapshot------------------
 /////Input Video Location
 Console.WriteLine("Enter Input File Location: ");
@@ -16,8 +39,8 @@ Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
 Console.ReadKey();
 //Watermark Path
 Console.WriteLine("Enter Time in Second to Take Snapshot: ");
-Console.WriteLine("40");
-time = 40;
+Console.WriteLine("30");
+time = 30;
 Console.WriteLine("\n\t\tSnapshot Saved....");
 transformvideo Transform7 = new transformvideo();
 Transform7.takesnapshot(inputPath: input, outputPath: output, timeinsec: time);
@@ -42,12 +65,10 @@ transformvideo Transform5 = new transformvideo();
 Transform5.addwatermark(inputPath: input, outputPath: output, watermark);
 Console.ReadKey();
 ////-----------------Trimming Video------------------
-//Declaring Variables
-int start, end;
 /////Input Video Location
 Console.WriteLine("Entering Input File Location: ");
-Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4");
-input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\input.mp4";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\video.mp4";
 Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
