@@ -1,4 +1,5 @@
 ﻿/*
+Concatenate Video
 Desktop Capture
 Split Video
 Take Snapshot
@@ -48,6 +49,22 @@ namespace TransformVideo
                   }
                   return true;
           }*/
+
+            public async Task<bool> concatenate(string inputPath1,string inputPath2, string outputPath)
+            {
+                try
+                {
+                    outputPath = Path.Combine(outputPath, "ConcatenateVideo.mp4");
+                    var conversion = await FFmpeg.Conversions.FromSnippet.Concatenate(outputPath, inputPath1, inputPath2);
+                    await conversion.Start();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                }
+                return true;
+            }
             public async Task<bool> desktopCapture(string outputPath,int timeSpan)
             {
                 try

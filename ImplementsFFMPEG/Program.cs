@@ -3,6 +3,26 @@ using TransformVideo;
 //Declaring Variables
 string input, input2, output, watermark;
 int time, start, end;
+////-----------------Concate Video------------------
+////////Input1 Video Location
+Console.WriteLine("Enter 1st Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4");
+input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4";
+Console.ReadKey();
+//Input2 Video Location
+Console.WriteLine("Enter 2nd Input File Location: ");
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4");
+input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4";
+Console.ReadKey();
+//Output Path 
+Console.WriteLine("Enter Output Path: ");
+output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
+Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\");
+Console.ReadKey();
+//Concatenate Video
+Console.WriteLine("\n\t\tConcatenate Video");
+transformvideo Transform10 = new transformvideo();
+Transform10.concatenate(inputPath1:input,inputPath2:input2,outputPath:output);
 ////-----------------Desktop Capture------------------
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
@@ -23,9 +43,10 @@ Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4");
 input = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb1.mp4";
 Console.ReadKey();
 //Input2 Video Location
-Console.WriteLine("Enter 2st Input File Location: ");
+Console.WriteLine("Enter 2nd Input File Location: ");
 Console.WriteLine(@"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4");
 input2 = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\comb2.mp4";
+Console.ReadKey();
 //Output Path 
 Console.WriteLine("Enter Output Path: ");
 output = @"C:\Users\uzair.mehmood\Desktop\ffmpeg\converted\";
