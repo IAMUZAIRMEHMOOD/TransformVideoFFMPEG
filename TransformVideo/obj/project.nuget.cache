@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PeZKfJy7Th2pcbZyYg57TLuHLnNIN2AsMFy4dvd5jR7CV+7hoFkZMwGLq1ebh7VAMSdmmIJg3d4ndibNy6nnOA==",
+  "dgSpecHash": "Kh6i60ESlPpgRnNe12ESxaYuZ8mcQE2MH28uUfi0Zhh9Lki9gnNGEmTPMc6LTby9psKGpMsWjvQFWim6v8dxfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\TransformVideo.csproj",
+  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\TransformVideo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",

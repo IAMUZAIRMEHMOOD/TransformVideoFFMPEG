@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\TransformVideo.csproj": {}
+    "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\TransformVideo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\TransformVideo.csproj": {
+    "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\TransformVideo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\TransformVideo.csproj",
+        "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\TransformVideo.csproj",
         "projectName": "TransformVideo",
-        "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\TransformVideo.csproj",
+        "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\TransformVideo.csproj",
         "packagesPath": "C:\\Users\\uzair.mehmood\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\GTP\\TransformVideo\\obj\\",
+        "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\TransformVideo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\uzair.mehmood\\AppData\\Roaming\\NuGet\\NuGet.Config",
