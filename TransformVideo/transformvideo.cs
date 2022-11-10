@@ -168,9 +168,9 @@ namespace TransformVideo
                     {
                         outputPath = Path.Combine(outputPath, "Trimmedvideo.mp4");
                         IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                        IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                        IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()!
                        .SetCodec(AudioCodec.aac);
-                        IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                        IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()!
                        .SetCodec(VideoCodec.h264);
                         await FFmpeg.Conversions.New()
                        .AddParameter($"-ss {startTime} -t {endTime}")
@@ -192,9 +192,9 @@ namespace TransformVideo
                 {
                     outputPath = Path.Combine(outputPath, "convertedtomp4.mp4");
                     IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                    IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()!
                    .SetCodec(AudioCodec.aac);
-                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                    IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()!
                    .SetCodec(VideoCodec.h264);
                     await FFmpeg.Conversions.New()
                    .AddStream(audioStream, videoStream)
@@ -223,9 +223,9 @@ namespace TransformVideo
                         case 480:
                             outputPath = Path.Combine(outputPath, "convertedto480p.mp4");
                             IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                            IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                            IStream audioStream = mediaInfo.AudioStreams.FirstOrDefault()!
                            .SetCodec(AudioCodec.aac);
-                            IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                            IStream videoStream = mediaInfo.VideoStreams.FirstOrDefault()!
                            .SetCodec(VideoCodec.h264)
                            .SetSize(VideoSize.Hd480);
                             await FFmpeg.Conversions.New()
@@ -236,9 +236,9 @@ namespace TransformVideo
                         case 720:
                             outputPath = Path.Combine(outputPath, "convertedto720p.mp4");
                             mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                            audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                            audioStream = mediaInfo.AudioStreams.FirstOrDefault()!
                             .SetCodec(AudioCodec.aac);
-                            videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                            videoStream = mediaInfo.VideoStreams.FirstOrDefault()!
                            .SetCodec(VideoCodec.h264)
                            .SetSize(VideoSize.Hd720);
                             await FFmpeg.Conversions.New()
@@ -249,9 +249,9 @@ namespace TransformVideo
                         case 1080:
                             outputPath = Path.Combine(outputPath, "convertedto1080p.mp4");
                             mediaInfo = await FFmpeg.GetMediaInfo(inputPath);
-                            audioStream = mediaInfo.AudioStreams.FirstOrDefault()
+                            audioStream = mediaInfo.AudioStreams.FirstOrDefault()!
                             .SetCodec(AudioCodec.aac);
-                            videoStream = mediaInfo.VideoStreams.FirstOrDefault()
+                            videoStream = mediaInfo.VideoStreams.FirstOrDefault()!
                            .SetCodec(VideoCodec.h264)
                            .SetSize(VideoSize.Hd1080);
                             await FFmpeg.Conversions.New()
