@@ -2753,11 +2753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
+      "projectUniqueName": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\Supportive\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
       "projectName": "ImplementsFFMPEG",
-      "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
+      "projectPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\Supportive\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
       "packagesPath": "C:\\Users\\uzair.mehmood\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\ImplementsFFMPEG\\obj\\",
+      "outputPath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\Supportive\\ImplementsFFMPEG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\uzair.mehmood\\AppData\\Roaming\\NuGet\\NuGet.Config",

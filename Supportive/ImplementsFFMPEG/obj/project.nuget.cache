@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DnKz21skiGkTnTDmCC63ZgXC6p9O0RmL/tik4SVpAcl+Hpv7KomUx3lxsZl9MqHFOC9OSc20OmrTVWSXGW8ZyQ==",
+  "dgSpecHash": "6dUKBVJynHogGpYpRvSI8+LC1DPcYy0cSaN1Z8niT/KsxFemcrGgUXYpBkc8AbWO+0uVkJNGfSNz8B2tegM5EA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
+  "projectFilePath": "C:\\Users\\uzair.mehmood\\Desktop\\TransformVideoFFMPEG\\Supportive\\ImplementsFFMPEG\\ImplementsFFMPEG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\uzair.mehmood\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
